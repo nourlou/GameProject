@@ -26,46 +26,45 @@ import com.example.quizapp.R
 @Composable
 fun CategoriesScreen(navController: NavController) {
     val categories = listOf(
-        Pair("إختبرثقافتك", R.drawable.brain), // Only category and imageRes
+        Pair("إختبر ثقافتك", R.drawable.brain),
         Pair("لو خيروك", R.drawable.choose)
     )
 
     Scaffold(
-        topBar = {
-            // Add your top bar here if needed
-        },
         content = { innerPadding ->
             Box(
                 modifier = Modifier
                     .fillMaxSize()
                     .padding(innerPadding)
             ) {
-                // Background image
+                // Image d'arrière-plan
                 Image(
-                    painter = painterResource(id = R.drawable.game3), // Replace with your image resource
-                    contentDescription = "Background Image",
-                    contentScale = ContentScale.Crop, // Crop to fit the screen
+                    painter = painterResource(id = R.drawable.game3),
+                    contentDescription = "Image de fond",
+                    contentScale = ContentScale.Crop,
                     modifier = Modifier.fillMaxSize()
                 )
 
-                // Foreground content
+                // Contenu au premier plan
                 Column(
                     modifier = Modifier
                         .fillMaxSize()
                         .padding(horizontal = 16.dp),
                     horizontalAlignment = Alignment.CenterHorizontally,
-                    verticalArrangement = Arrangement.Top
+                    verticalArrangement = Arrangement.Center
                 ) {
+                    // Titre
                     Text(
-                        text = "",
+                        text = "اختر لعبة",
                         style = TextStyle(
-                            fontSize = 28.sp,
+                            fontSize = 32.sp,
                             fontWeight = FontWeight.Bold,
                             color = Color.White
                         ),
-                        modifier = Modifier.padding(vertical = 20.dp)
+                        modifier = Modifier.padding(bottom = 24.dp)
                     )
 
+                    // Boucle sur les catégories
                     categories.forEach { (category, imageRes) ->
                         CategoryCard(
                             category = category,
@@ -96,12 +95,12 @@ fun CategoryCard(
             .fillMaxWidth()
             .padding(vertical = 12.dp)
             .clickable { onClick() }
-            .shadow(8.dp, RoundedCornerShape(16.dp)),
+            .shadow(12.dp, RoundedCornerShape(16.dp)),
         shape = RoundedCornerShape(16.dp),
         colors = CardDefaults.cardColors(
-            containerColor = Color(0xFFF3E5F5)
+            containerColor = Color.Transparent // Transparence totale
         ),
-        elevation = CardDefaults.cardElevation(12.dp)
+        elevation = CardDefaults.cardElevation(8.dp)
     ) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
@@ -109,22 +108,24 @@ fun CategoryCard(
                 .padding(16.dp)
                 .fillMaxWidth()
         ) {
+            // Image de catégorie
             Image(
                 painter = painterResource(id = imageRes),
                 contentDescription = "$category Logo",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
-                    .size(80.dp) // Adjusted image size
-                    .clip(RoundedCornerShape(50)) // Rounded image style
+                    .size(100.dp) // Taille augmentée
+                    .clip(RoundedCornerShape(50)) // Style arrondi
                     .padding(end = 16.dp)
             )
 
+            // Texte de la catégorie
             Text(
                 text = category,
                 style = TextStyle(
-                    fontSize = 22.sp,
+                    fontSize = 24.sp,
                     fontWeight = FontWeight.Bold,
-                    color = Color(0xFF1A237E)
+                    color = Color.White
                 )
             )
         }
