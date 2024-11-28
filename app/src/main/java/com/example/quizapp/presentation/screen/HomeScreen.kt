@@ -10,7 +10,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.quizapp.R
 
@@ -53,9 +55,13 @@ fun HomeScreen(navController: NavController) {
                 shape = RoundedCornerShape(16.dp)
             ) {
                 Text(
-                    text = "Start Quiz",
-                    style = MaterialTheme.typography.labelLarge
+                    text = "إبدأ",
+                    style = MaterialTheme.typography.labelLarge.copy(
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 24.sp
+                    )
                 )
+
             }
 
             Spacer(modifier = Modifier.height(25.dp)) // Adds space below the button

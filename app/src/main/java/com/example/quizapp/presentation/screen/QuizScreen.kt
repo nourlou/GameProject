@@ -193,7 +193,7 @@ fun QuizScreen(category: String, navController: NavController) {
                         .fillMaxWidth(0.85f)
                 ) {
                     Text(
-                        text = if (currentQuestionIndex < totalQuestions - 1) "Next" else "Finish",
+                        text = if (currentQuestionIndex < totalQuestions - 1) "التالي " else "Finish",
                         fontSize = 20.sp,
                         fontWeight = FontWeight.Bold,
                         color = Color.White
