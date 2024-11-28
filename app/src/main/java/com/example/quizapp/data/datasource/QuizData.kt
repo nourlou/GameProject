@@ -5,6 +5,7 @@ import com.example.quizapp.domain.model.Question
 object QuizData {
 
 
+
     val Game1 = listOf(
         Question("ماهية فصيلة الدم التي تمنح لسائر الفصائل؟", listOf("AB-", "O-", "A+"), "O-"),
         Question("من هو مؤسس حركة حماس و زعيمها الروحي في فلسطين؟", listOf("موسى أبو مرزوق ", "أحمد ياسين", "ابراهيم غوشة "), "أحمد ياسين"),

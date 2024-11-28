@@ -1,7 +1,6 @@
 package com.example.quizapp.presentation.screen
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -11,7 +10,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -24,10 +22,18 @@ import com.example.quizapp.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun CategoriesScreen(navController: NavController) {
+fun CategoriesScreen(navController: NavController, param: (Any) -> Unit) {
     val categories = listOf(
         Pair("إختبر ثقافتك", R.drawable.brain),
-        Pair("لو خيروك", R.drawable.choose)
+        Pair("لو خيروك", R.drawable.choose),
+        Pair("puzzleركب ال", R.drawable.puzzle)
+    )
+
+    // Mappage des routes
+    val categoryRoutes = mapOf(
+        "لو خيروك" to "choiceGame",
+        "puzzleركب ال" to "puzzleGame",
+        "إختبر ثقافتك" to "quiz/إختبرثقافتك"
     )
 
     Scaffold(
@@ -37,15 +43,15 @@ fun CategoriesScreen(navController: NavController) {
                     .fillMaxSize()
                     .padding(innerPadding)
             ) {
-                // Image d'arrière-plan
+                // Image de fond
                 Image(
                     painter = painterResource(id = R.drawable.game3),
-                    contentDescription = "Image de fond",
+                    contentDescription = "Background Image",
                     contentScale = ContentScale.Crop,
                     modifier = Modifier.fillMaxSize()
                 )
 
-                // Contenu au premier plan
+                // Contenu de premier plan
                 Column(
                     modifier = Modifier
                         .fillMaxSize()
@@ -64,17 +70,15 @@ fun CategoriesScreen(navController: NavController) {
                         modifier = Modifier.padding(bottom = 24.dp)
                     )
 
-                    // Boucle sur les catégories
+                    // Itération à travers les catégories
                     categories.forEach { (category, imageRes) ->
                         CategoryCard(
                             category = category,
                             imageRes = imageRes,
                             onClick = {
-                                if (category == "لو خيروك") {
-                                    navController.navigate("choiceGame")
-                                } else {
-                                    navController.navigate("quiz/${category}")
-                                }
+                                // Navigation dynamique basée sur categoryRoutes
+                                val route = categoryRoutes[category] ?: "defaultRoute"
+                                navController.navigate(route)
                             }
                         )
                     }
@@ -108,7 +112,7 @@ fun CategoryCard(
                 .padding(16.dp)
                 .fillMaxWidth()
         ) {
-            // Image de catégorie
+            // Image de la catégorie
             Image(
                 painter = painterResource(id = imageRes),
                 contentDescription = "$category Logo",
