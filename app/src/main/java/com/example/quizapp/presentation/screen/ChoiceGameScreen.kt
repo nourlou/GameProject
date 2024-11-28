@@ -12,6 +12,7 @@ import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -46,10 +47,10 @@ fun ChoiceGameScreen(navController: NavController) {
 
 
     )
-    var currentChoiceIndex by remember { mutableStateOf(0) }
-    var showPercentages by remember { mutableStateOf(false) }
-    var userSelection by remember { mutableStateOf("") }
-    var percentages by remember { mutableStateOf(Pair(0, 0)) }
+    var currentChoiceIndex by rememberSaveable { mutableStateOf(0) }
+    var showPercentages by rememberSaveable { mutableStateOf(false) }
+    var userSelection by rememberSaveable { mutableStateOf("") }
+    var percentages by rememberSaveable { mutableStateOf(Pair(0, 0)) }
 
     Scaffold(
         content = { innerPadding ->

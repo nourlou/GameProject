@@ -3,6 +3,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.BasicText
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.painter.Painter
@@ -17,7 +18,7 @@ import kotlinx.coroutines.delay
 @Composable
 fun PuzzleScreen(navController: NavController) {
     // Timer variables
-    var timer by remember { mutableStateOf(150) } // 2:30 min timer
+    var timer by rememberSaveable { mutableStateOf(150) } // 2:30 min timer
     val totalTime = 150
 
     LaunchedEffect(timer) {

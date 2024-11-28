@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -23,11 +24,11 @@ import kotlinx.coroutines.delay
 @Composable
 fun QuizScreen(category: String, navController: NavController) {
     val questions = getQuestionsForCategory(category)
-    var currentQuestionIndex by remember { mutableStateOf(0) }
+    var currentQuestionIndex by rememberSaveable { mutableStateOf(0) }
     val totalQuestions = questions.size
-    var score by remember { mutableStateOf(0) }
-    var selectedAnswerIndex by remember { mutableStateOf<Int?>(null) }
-    var showFinalScreen by remember { mutableStateOf(false) }
+    var score by rememberSaveable { mutableStateOf(0) }
+    var selectedAnswerIndex by rememberSaveable { mutableStateOf<Int?>(null) }
+    var showFinalScreen by rememberSaveable { mutableStateOf(false) }
 
     if (showFinalScreen) {
         // Final Score Screen
