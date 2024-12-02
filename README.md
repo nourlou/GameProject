@@ -21,3 +21,4 @@ https://github.com/user-attachments/assets/f65b7be4-1e02-4448-9706-c532a8f8e722
 ![WhatsApp Image 2024-12-02 à 22 10 52_3a7c5aa3](https://github.com/user-attachments/assets/56f0e7b3-3233-4a96-95e9-df1d34bf4386)
 ![WhatsApp Image 2024-12-02 à 22 10 52_9d59cce7](https://github.com/user-attachments/assets/87ce7573-cda5-47b1-acbb-f7dc88ab9feb)
 
+![clean architecture](https://github.com/user-attachments/assets/23dfa689-1997-4342-8542-ede63a894770)
