@@ -14,7 +14,6 @@ https://github.com/user-attachments/assets/f65b7be4-1e02-4448-9706-c532a8f8e722
 ![WhatsApp Image 2024-12-02 à 22 10 52_3a7c5aa3](https://github.com/user-attachments/assets/8bb4a890-c69a-4496-9e0f-4b96bca22185)
 ![WhatsApp Image 2024-12-02 à 22 10 52_9d59cce7](https://github.com/user-attachments/assets/91413ce0-dc96-4bca-b785-7b194fcc0e1d)
 
-https://github.com/user-attachments/assets/b28fd662-723a-4d52-9944-17bb84d4befe
 
 ![WhatsApp Image 2024-12-02 à 22 10 50_bf3cb116](https://github.com/user-attachments/assets/54fd51c5-d76b-441a-9039-dbd96d9f1df5)
 ![WhatsApp Image 2024-12-02 à 22 10 50_9e630a80](https://github.com/user-attachments/assets/cda9e71d-8229-4e80-a5b2-bb7f7e9de749)
